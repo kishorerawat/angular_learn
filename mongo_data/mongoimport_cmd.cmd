@@ -1,0 +1,1 @@
+mongoimpoprt --db contactlist --collection contactlist --file contactlist.json
