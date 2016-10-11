@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>AngularJS Tutorial App - HTML DOM</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <link href="./css/my_style.css" rel="stylesheet">
+    
+</head>
+
+<body ng-app="myApp">
+
+	<div ng-controller="myCtrl">
+
+	<h2>Example to show Angular directives to work with HTML DOM elements</h2>
+	<h3>Directive : <code>ng-disabled</code></h3>
+	<h4>The button <code>Click Me!</code> is enabled or disabled as per the checkbox selection</h4>
+	<div ng-init="mySwitch=true">
+		<p>
+			<input type="checkbox" ng-model="mySwitch">Button
+		</p>
+
+		<p>
+			<button ng-disabled="mySwitch">Click Me!</button>
+		</p>
+
+		<p>
+			Disable Button : {{mySwitch}}
+		</p>
+	</div>
+
+	<h3>Directive : <code>ng-show</code></h3>
+	<h4>The checkbox <code>Show Input</code> enables / disables display of input box</h4>
+	<p ng-init="showInputBox=true">
+		<input type="checkbox" ng-model="showInputBox">Show Input
+
+		<span><input style="border-color: blue;" type="text" ng-show="showInputBox"></span>
+	</p>
+
+	<!-- The Controller JavaScript -->
+	<script src="./controllers/my_controller.js"></script>
+	
+</body>
+
+</html>

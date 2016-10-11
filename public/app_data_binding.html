@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>AngularJS Tutorial App - Data Binding</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <link href="./css/my_style.css" rel="stylesheet">
+    
+</head>
+
+<body ng-app="myApp">
+	<div ng-controller="myCtrl">
+
+		<h3>Example to show 2-way data binding</h3>
+		<p>Press on the heading below to change it</p>
+		<h2 ng-click="changeName()" ng-init="firstName='Prajeet'">{{firstName}}</h2>
+
+	</div>
+
+	<!-- The Controller JavaScript -->
+	<script src="./controllers/my_controller.js"></script>
+	
+</body>
+
+</html>

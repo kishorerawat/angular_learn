@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>AngularJS Tutorial App - Email Validation</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <link href="./css/my_style.css" rel="stylesheet">
+    
+</head>
+
+<body ng-app="myApp">
+	<div ng-controller="myCtrl">
+
+		<h3>Showing validation of e-mail id input field</h3>
+		<form name="myForm">
+		  Email : 
+		  <input type="email" name="myEmail" ng-model="text">
+		  		 <span ng-show="myForm.myEmail.$error.email">
+		  		 Invalid e-mail id</span>
+		</form>
+
+	</div>
+
+	<!-- The Controller JavaScript -->
+	<script src="./controllers/my_controller.js"></script>
+	
+</body>
+
+</html>

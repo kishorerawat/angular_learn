@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>AngularJS Tutorial App - User Validation</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <link href="./css/my_style.css" rel="stylesheet">
+    
+</head>
+
+<body ng-app="myApp">
+
+	<div ng-controller="myCtrl">
+		
+		<h1>This example shows usage of user-defined validation method of UI control</h1>
+		<h3>User-defined Validation Check: input in the textbox should contain letter "e"</h3>
+		<form name="myForm">
+
+			<div>
+				<input name="myInput" ng-model="myInput" required my-validation>
+				<span ng-show="!myForm.myInput.$valid">text should contain letter 'e'</span></div> 
+
+			<h2>The input's valid state is : {{myForm.myInput.$valid}}</h2>
+
+		</form>
+
+	</div>
+
+	<!-- The Controller JavaScript -->
+	<script src="./controllers/my_controller.js"></script>
+	
+</body>
+
+</html>

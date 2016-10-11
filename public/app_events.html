@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>AngularJS Tutorial App - Events</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <link href="./css/my_style.css" rel="stylesheet">
+    
+</head>
+
+<body ng-app="myApp">
+
+	<div ng-controller="myCtrl">
+		<h2>Angular directives to trigger event handler functions </h2>
+		<h3>Move and click your mouse inside the textbox to see the various events being generated</h3>
+		<p>Name : <input type="text" ng-mouseenter ="mouseEnter()"
+				   ng-mouseover="mouseOver()"
+				   ng-mousemove="mouseMove()"
+				   ng-mouseleave="mouseLeave()"
+				   ng-mousedown="mouseDown($event)" 
+				   ng-mouseup="mouseUp()"
+				   ng-click="mouseClick($event)"
+				   ng-dblclick="doubleClick($event)"></p>
+		<h2>Total Events = {{totalEventCounter}}</h2>
+		<h2>Current Event (text will be cleared when events>=500) : {{currentEventName}}</h2>
+
+	</div>
+
+	<!-- The Controller JavaScript -->
+	<script src="./controllers/my_controller.js"></script>
+	
+</body>
+
+</html>

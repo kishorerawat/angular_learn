@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>AngularJS Tutorial App - Table</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <link href="./css/my_style.css" rel="stylesheet">
+    
+</head>
+
+<body ng-app="myApp">
+	<div ng-controller="myCtrl">
+	  <h2>This example shows how to create tables in Angular</h2>
+	  <h3>Table style is defined in an external CSS file</h3>
+	  <h4>Styles Used are as follows : </h4>
+	  <p><span>border:1px solid grey</span>
+	  <span>border-collapse:collapse</span>
+	  <span>padding: 5px</span>
+	  <span>table tr:nth-child(odd) and table tr:nth-child(even) styles for different colors for the rows</span></p>
+
+	  <table>
+	    <tr ng-repeat="x in cities">
+		  <td>{{x.city}}</td>
+		  <td>{{x.state}}</td>
+		</tr>
+	  </table>
+	  <br/><br/>
+
+	  <h3>Table rows can be sorted using <code>orderBy</code> filter</h3>
+	  <h4>The table below shows the cities sorted as per the state</h4>
+	  <table>
+	    <tr ng-repeat="x in cities | orderBy: 'state'">
+		  <td>{{x.city}}</td>
+		  <td>{{x.state}}</td>
+		</tr>
+	  </table>
+
+	  <h3>Showing table using <code>uppercase</code> filter used for state names </h3>
+	  <table>
+	    <tr ng-repeat="x in cities">
+		  <td>{{x.city}}</td>
+		  <td>{{x.state | uppercase}}</td>
+		</tr>
+	  </table>
+
+	  <h3>Displaying the table index using <code>$index</code> property</h3>
+	  <table>
+	    <tr ng-repeat="x in cities">
+	      <td>{{$index + 1}}</td>
+		  <td>{{x.city}}</td>
+		  <td>{{x.state}}</td>
+		</tr>
+	  </table>
+
+	</div>
+
+	<!-- The Controller JavaScript -->
+	<script src="./controllers/my_controller.js"></script>
+	
+</body>
+
+</html>

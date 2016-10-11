@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>AngularJS Tutorial App - Attribute</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <link href="./css/my_style.css" rel="stylesheet">
+   
+ 	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    
+</head>
+
+<body ng-app="myApp">
+
+	<div ng-controller="myCtrl">
+
+		<h2>Type any color name in the input box e.g. red, blue, pink, orange etc. </h2>
+		
+		<input type="text" style="background-color: {{myColor}}"
+			   ng-model="myColor" value="{{myColor}}">
+	</div>
+
+	<!-- The Controller JavaScript -->
+	<script src="./controllers/my_controller.js"></script>
+	
+</body>
+
+</html>

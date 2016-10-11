@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Color Tutorial App - All Colors</title>
+
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+	  <script src="./scripts/css_colors.js"></script>
+	
+	<style>
+		div.colorbox {
+			width: 400px;
+			height: 200px;
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+			font-size: 50px;
+			border-width: 2px;
+			border-style: solid;
+		}
+
+		div {
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
+		input {
+			border-width: 2px;
+		}
+
+	</style>    
+</head>
+
+<body ng-app="myApp">
+
+	<div ng-controller="myCtrl">
+		<h1>This example shows all HTML color names, generating color names with a delay</h1>
+
+		<form name="myForm">
+
+			<div>Delay (in milli seconds - 1000 ms = 1 sec) : </div>
+			<div><input type="number" ng-model="delayMilliSeconds"></div>
+
+			<div class="colorbox" style="background-color: {{currentColor}};">{{currentColor}}</div>
+
+			<div>
+				<span><button class="btn btn-primary" ng-click="startColors()">Start</button></span>	
+
+				<span><button class="btn btn-danger" ng-click="stopColors()">Stop</button></span>
+
+				<span><button class="btn btn-info" ng-click="resetData()">Reset</button></span>
+
+			</div>
+
+		</form>
+
+	</div>
+
+	<!-- The Controller JavaScript -->
+	<script src="./controllers/colors_ctrl.js"></script>
+
+</body>
+
+</html>

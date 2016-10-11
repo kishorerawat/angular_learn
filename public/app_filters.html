@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>AngularJS Tutorial App - Filters</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <link href="./css/my_style.css" rel="stylesheet">
+    
+</head>
+
+<body ng-app="myApp">
+	<div ng-controller="myCtrl">
+		<h3>This example shows all the filters available in Angular</h3>
+		<h4>Filter <code>lowercase</code> : <span>{{(firstName | lowercase) + " "}}</span><span>{{lastName | lowercase}}</span></h4>
+
+		<h4>Filter <code>uppercase</code> : <span>{{(firstName | uppercase) + " "}}</span><span>{{lastName | uppercase}}</span></h4>
+
+		<h4>Filter <code>currency</code> for amounts : 
+				<!-- code '&#8377;' is used for the special Rupee symbol
+				  code '&#8360;' can be used for the words "Rs" -->
+				<span>{{10000 | currency:'&#8377;'}} or </span> 
+				<span>{{20000 | currency:'&#8360;'}}</span></h4>
+		<h4>Filter <code>orderBy</code> for sorting lists :</h4>
+		<ul>
+			<li ng-repeat="x in names | orderBy:'name'">
+				{{x.name + " , " + x.relation}}
+			</li>
+		</ul>
+		<h4>Filter <code>filter</code> for showing subset of lists :</h4>
+		<ul>
+			<!-- this checks for the letter specified in the 
+			     filter in all the fields of the JSON data --> 
+			<li ng-repeat="x in names | filter:'F'">
+				{{x.name + " , " + x.relation}}
+			</li>
+		</ul>
+
+		<h4>Filter using <code>ng-model</code> in the expression : </h4>
+		<p>City : <input type="text" ng-model="city_test"></p>
+		<ul>
+			<li ng-repeat="x in cities | filter:city_test">
+				{{x.city + " , " + x.state}}
+			</li>
+		</ul>
+
+		<h4>Sort using <code>orderBy</code> to sort column data : </h4>
+		<p>Click on the Column heading to sort data on that column </p>
+		<table border="1" width="25%" ng-init="orderByMe('state')">
+			<tr>
+			  <th ng-click="orderByMe('city')"><a href="">City</a></th>
+			  <th ng-click="orderByMe('state')"><a href="">State</a></th>
+			</tr>
+			<tr ng-repeat="x in cities | orderBy:myOrderBy">
+				<td>{{x.city}}</td>
+				<td>{{x.state}}</td>
+			</tr>
+		</table>
+
+		<h4>Filtering data using user defined filter : </h4>
+		<ul>
+			<li ng-repeat="x in cities">
+				<!-- myFilter is user defined filter which changes
+				     every alternate character into uppercase -->
+				{{(x.city + " " + x.state) | myFilter}}
+			</li>
+		</ul>
+	</div>
+
+	<!-- The Controller JavaScript -->
+	<script src="./controllers/my_controller.js"></script>
+	
+</body>
+
+</html>

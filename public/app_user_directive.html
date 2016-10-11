@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>AngularJS Tutorial App - User Directive</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <link href="./css/my_style.css" rel="stylesheet">
+    
+</head>
+
+<body ng-app="myApp">
+	<div ng-controller="myCtrl">
+	
+		<h3>The following HTML is displayed using user-created directive:</h3>
+		
+		<p>As an element itself: <my-directive></my-directive></p>
+		<p>As an attribute of p tag: <p my-directive></p></p>
+	
+	</div>
+
+	<!-- The Controller JavaScript -->
+	<script src="./controllers/my_controller.js"></script>
+	
+</body>
+
+</html>

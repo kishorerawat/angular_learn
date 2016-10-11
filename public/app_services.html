@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>AngularJS Tutorial App - Services</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <link href="./css/my_style.css" rel="stylesheet">
+    
+</head>
+
+<body ng-app="myApp">
+
+	<div ng-controller="myCtrl">
+		<h1>AngularJS provides many built-in services like <code>$location, $http</code> etc.</h3>
+		<h2>This example shows the usage of these various services</h2>
+
+		<h3>Service : <code>$location</code></h3>
+		<p>location.absUrl : <span>{{myAbsUrl}}</span></p>
+		<p>location.url : <span>{{myUrl}}</span></p>
+		<p>location.protocol : <span>{{myProtocol}}</span></p>
+		<p>location.host : <span>{{myHost}}</span></p>
+		<p>location.hostWithPort : <span>{{myHostWithPort}}</span></p>
+
+		<h3>Service : <code>$http</code></h3>
+		<p>Today's Welcome Message is (retrieved by $http call) : </p>
+		<h2>{{myWelcome}}</h2>
+
+		<h3>Service : <code>$timeout</code></h3>
+		<p>This header will change after two seconds : </p>
+		<h2>{{myHeader}}</h2>
+
+		<h3>Service : <code>$interval</code></h3>
+		<p>This service will display time every second : </p>
+		<h2>Time : <span>{{theTime}}</span></h2>
+
+		<!--
+		<h3>Service : user defined service named myAvg</h3>
+		<p>This user defined service returns the average of an array of numbers</p>
+		<h2>Average = <span>{{myAvg}}</span></h2>
+		-->
+	</div>
+
+	<!-- The Controller JavaScript -->
+	<script src="./controllers/my_controller.js"></script>
+	
+</body>
+
+</html>

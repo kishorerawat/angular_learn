@@ -1,0 +1,14 @@
+div.colorbox {
+	width: 140px;
+	height: 84px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 18px;
+	border-width: 1px;
+	border-style: solid;
+}
+
+h3 {
+	text-decoration: underline;
+}

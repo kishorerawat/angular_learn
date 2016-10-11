@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>AngularJS Tutorial App - Form</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <link href="./css/my_style.css" rel="stylesheet">
+    
+</head>
+
+<body ng-app="myApp">
+
+	<div ng-controller="myCtrl">
+
+		<h1>This example shows the <code>Form</code> directive to create input controls with required validations</h1>
+		<form name="myForm">
+		  <div class="in_panel">
+			<h3>Form Control : <code>input type="text"</code></h3>
+			<div>First Name: <input name="firstname" type="text" ng-model="firstName" ng-maxlength="20" required><span ng-show="myForm.firstname.$invalid">Length can be max 20 characters</span></div>
+
+
+			<h3>Form Control : <code>input type="checkbox"</code></h3>
+			<div>Checkbox to Show a header: <input type="checkbox" ng-model="showHeader"></div>
+
+			<h3>Form Control : <code>input type="radio"</code></h3>
+			<div>Pick a topic:
+				<input type="radio" ng-model="selectedTopic" value="AWS">AWS
+				<input type="radio" ng-model="selectedTopic" value="Azure">Azure
+				<input type="radio" ng-model="selectedTopic" value="CloudStack">CloudStack
+			</div>
+		  </div>		
+		</form>
+
+		<h2>You entered First Name: {{firstName}}</h2>
+		<h2>A Header will be shown here <span ng-show="showHeader">HEADER</span> if the checkbox above is selected</h2>
+		<h2>Using directive <code>ng-switch</code> to check which topic is selected</h2>
+		<div ng-switch="selectedTopic">
+			<div class="in_panel" ng-switch-when="AWS">
+				<h1>Amazon Web Services (AWS) </h1>
+				<h2>Explore AWS Cloud Platform : <a href="https://aws.amazon.com/">AWS</a></h2>
+			</div>
+			<div class="in_panel" ng-switch-when="Azure">
+				<h1>Microsoft Azure</h1>
+				<h2>You build.You innovate. You choose. : <a href="https://azure.microsoft.com/en-in/">Azure</a></h2>
+			</div>
+			<div class="in_panel" ng-switch-when="CloudStack">
+				<h1>Apache CloudStack</h1>
+				<h2>Open Source Cloud Computing : <a href="https://cloudstack.apache.org/">CloudStack</a></h2>
+			</div>
+		</div>
+		<div class="in_panel">
+			<h1>Form States which can be used for validation : </h1>
+			<h2>form.pristine  : {{myForm.$pristine}}</h2>
+			<h2>form.dirty     : {{myForm.$dirty}}</h2>
+			<h2>form.invalid   : {{myForm.$invalid}}</h2>
+			<h2>form.valid     : {{myForm.$valid}}</h2>
+			<h2>form.submitted : {{myForm.$submitted}}</h2>
+		</div>
+	</div>
+
+	<!-- The Controller JavaScript -->
+	<script src="./controllers/my_controller.js"></script>
+	
+</body>
+
+</html>

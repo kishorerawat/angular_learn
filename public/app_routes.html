@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+	<title>AngularJS Tutorial App - Routes</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+
+    <link href="./css/my_style.css" rel="stylesheet">
+    
+</head>
+
+<body ng-app="spaApp">
+
+	<h1>This example shows the use of <code>ngRoute</code> directive to create an SPA application</h1>
+	<p><a href="#/">Main</a></p>
+	<a href="#red">Red</a>
+	<a href="#green">Green</a>
+
+	<div style="border: solid" ng-view></div>
+
+	<!--The Controller JavaScript-->
+	<!--<script src="./controllers/app_routes.ctrl.js"></script>-->
+
+	<script>
+var app = angular.module('spaApp', ['ngRoute']);
+
+app.config(function($routeProvider) {
+  $routeProvider
+    .when("/", {
+      templateUrl: "welcome.html"
+    })
+    .when("/red", {
+      templateUrl: "hello.html"
+    })
+    .when("/green", {
+      templateUrl: "niceday.html"
+    });
+});
+	</script>
+
+
+</body>
+
+</html>

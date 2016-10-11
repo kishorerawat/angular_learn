@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>AngularJS Tutorial App - Root Scope</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <link href="./css/my_style.css" rel="stylesheet">
+    
+</head>
+
+<body ng-app="myApp">
+	<div ng-controller="myCtrl">
+
+		<h3>Example to show <code>rootScope</code> and <code>controller scope</code></h3>
+		<p>The scope of the controller's favorite color is : </p>
+		<h1 style="color: {{color}}">{{color}}</h1>
+
+	</div>
+
+	<p>The rootScope's favorite color is : </p>
+	<h1 style="color: {{color}}">{{color}}</h1>
+
+	<!-- The Controller JavaScript -->
+	<script src="./controllers/my_controller.js"></script>
+	
+</body>
+
+</html>

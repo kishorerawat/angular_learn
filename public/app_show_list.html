@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>AngularJS Tutorial App - Show List</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <link href="./css/my_style.css" rel="stylesheet">
+    
+</head>
+
+<body ng-app="myApp">
+	<div ng-controller="myCtrl">
+		<h3>Showing a list using <code>ng-repeat</code> directive:</h3>
+		<ul>
+			<li ng-repeat="x in names">
+				{{x.name}}
+			</li>
+		</ul>
+
+		<h3>Showing a list having multiple properties using <code>ng-repeat</code> directive:</h3>
+		<ul>
+			<li ng-repeat="x in names">
+				{{x.name + " : " + x.relation}}
+			</li>
+		</ul>
+	</div>
+
+	<!-- The Controller JavaScript -->
+	<script src="./controllers/my_controller.js"></script>
+	
+</body>
+
+</html>

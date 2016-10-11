@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>AngularJS Tutorial App - Multi</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <link href="./css/my_style.css" rel="stylesheet">
+    
+</head>
+
+<body ng-app="myApp">
+	<div ng-controller="myCtrl" ng-init="getContacts()">
+		<p>First Angular expression : 5 + 5 = {{ 5 + 5 }};</p>
+
+		<h2>Type any color name in the input box e.g. red, blue, pink, orange etc. </h2>
+		<input type="text" style="background-color: {{myColor}}"
+			   ng-model="myColor" value="{{myColor}}">
+		</br></br>
+
+		<h3>Binding data using <code>ng-model</code> directive:</h3>
+		First Name: <input type="text" ng-model="firstName"></br>
+		Last Name : <input type="text" ng-model="lastName"></br>
+
+		</br>
+		Full Name : {{firstName + " " + lastName}}
+		</br></br>
+
+		<h3>Using Angular expression to do calculations:</h3>
+		<h4>With validation checks to change box color if kept blank</h4>
+
+		Quantity : <input type="number" ng-model="quantity"
+					ng-init="quantity=10" ng-blur="setDefaultValues()" required>
+		Costs	 : <input type="number" ng-model="price"
+				   ng-init="price=100" ng-blur="setDefaultValues()" required>
+		</br></br>
+		Total Amount : {{quantity * price}}
+
+		<h3>Showing a list using <code>ng-repeat</code> directive:</h3>
+		<ul>
+			<li ng-repeat="x in names">
+				{{x.name}}
+			</li>
+
+		</ul>
+
+		<h3>Showing a list having multiple properties using <code>ng-repeat</code> directive:</h3>
+		<ul>
+			<li ng-repeat="x in names">
+				{{x.name + " : " + x.relation}}
+			</li>
+		</ul>
+
+		<h3>The following HTML is displayed using user-created directive:</h3>
+		<p>As an element itself: <my-directive></my-directive></p>
+		<p>As an attribute of p tag: <p my-directive></p></p>
+
+		<h3>Showing validation of e-mail id input field</h3>
+		<form name="myForm">
+		  Email : 
+		  <input type="email" name="myEmail" ng-model="text">
+		  		 <span ng-show="myForm.myEmail.$error.email">
+		  		 Invalid e-mail id</span>
+		</form>
+
+		<h3>Example to show 2-way data binding></h3>
+		<p>Press on the heading below to change it</p>
+		<h2 ng-click="changeName()" ng-init="firstName='Prajeet'">{{firstName}}</h2>
+
+		<h3>Example to show <code>$http get</code> request returning data from Mongo DB</h3>
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>e-mail id</th>
+			</tr>
+			<tr ng-repeat="x in contacts">
+				<td>{{x.name}}</td>
+				<td>{{x.email}}</td>
+			</tr>
+		</table>
+
+		<h3>Example to show <code>rootScope</code> and <code>controller scope</code></h3>
+		<p>The scope of the controller's favorite color is : </p>
+		<h1 style="color: {{color}}">{{color}}</h1>
+
+	</div>
+
+	<p>The rootScope's favorite color is : </p>
+	<h1 style="color: {{color}}">{{color}}</h1>
+
+	<!-- The Controller JavaScript -->
+	<script src="./controllers/my_controller.js"></script>
+	
+</body>
+
+</html>

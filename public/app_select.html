@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>AngularJS Tutorial App - Select</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <link href="./css/my_style.css" rel="stylesheet">
+    
+</head>
+
+<body ng-app="myApp">
+
+	<div ng-controller="myCtrl">
+
+		<h3>Creating Select listbox with <code>ng-options</code> directive : </h3>
+		<h4>Creating Select listbox with <code>ng-options</code> returns a JSON Object</h4>
+		
+		Select Name : <select ng-model="selectedName" ng-options="x.name for x in names"></select>
+		<p>Selected Name : {{selectedName.name}}</p>
+		<p>Selected Person's Relationship : {{selectedName.relation}}<span>This is possible as the selected entity is an Object</p>
+
+		<h3>Creating Select listbox with <code>ng-repeat</code> directive : </h3>
+		<h4>Creating Select listbox with <code>ng-repeat</code> returns a String</h4>
+		
+		<select ng-model="selectedName2">
+			<option ng-repeat="x in names" value="{{x.name}}">{{x.name}}</option>
+		</select>
+		<p>Selected Name : {{selectedName2}}<span>Here we can show only one String</span></p>
+	
+		<h3>Creating Select listbox with <code>ng-options</code> and data source as an Object and not an array</h3>	
+		<table width="50%">
+		  <tr>
+		    <th>Using <code>key</code> as the selection string</th>
+		    <th>Using <code>value</code> as the selection string</th>
+		  </tr>
+		  <tr>
+		    <td>
+		      <select ng-model="selectedCar1" ng-options="x for (x,y) in cars"></select>
+		      <p>Selected Car : {{selectedCar1.brand}}</p>
+		      <p>Model        : {{selectedCar1.model}}</p>
+		      <p>Color        : {{selectedCar1.color}}</p>
+			</td>
+			<td>
+		      <select ng-model="selectedCar2" ng-options="y.brand for (x,y) in cars"></select>
+		      <p>Selected Car : {{selectedCar2.brand}}</p>
+		      <p>Model        : {{selectedCar2.model}}</p>
+		      <p>Color        : {{selectedCar2.color}}</p>
+			</td>
+		  </tr>
+		</table>
+
+	</div>
+
+	<!-- The Controller JavaScript -->
+	<script src="./controllers/my_controller.js"></script>
+
+</body>
+
+</html>

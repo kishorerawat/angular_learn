@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>AngularJS Tutorial App - Expr</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <!--<link href="./css/my_style.css" rel="stylesheet">-->
+
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    
+</head>
+
+<body ng-app="myApp">
+
+	<div ng-controller="myCtrl" class="w3-container">
+		<h1>This example uses the <code>w3.css</code> stylesheet from w3schools</h1>
+		<table class="w3-table w3-bordered w3-striped">
+			<tr>
+				<th>City</th>
+				<th>State</th>
+			</tr>
+			<tr ng-repeat="x in cities">
+				<td>{{x.city}}</td>
+				<td>{{x.state}}</td>
+				<td><button class="w3-btn w3-ripple" ng-click="">Normal Button</button></td>
+			</tr>
+		</table>
+		<br>
+		<button class="w3-btn w3-green w3-ripple" ng-click="">Green Button</button>
+	</div>
+
+	<!-- The Controller JavaScript -->
+	<script src="./controllers/my_controller.js"></script>
+	
+</body>
+
+</html>

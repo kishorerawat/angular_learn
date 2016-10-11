@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List of All Example Apps</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<h1>Click on any of the following links to run that example app</h1>
+		<ol>
+			<li ng-repeat="x in htmlFiles">
+				<a href="{{x + '.html'}}">{{x}}</a>	
+			</li>
+		</ol>
+	</div>
+
+	<script>
+		
+		var app = angular.module("myApp", []);
+
+		app.controller("myCtrl", function($scope) {
+			$scope.htmlFiles = [ 
+				"app_expr", "app_attribute",
+				"app_ng_model", "app_data_binding",
+				"app_root_scope", "app_calc_validation",
+				"app_email_validation", "app_show_list",
+				"app_user_directive", "app_filters",
+				"app_services", "app_table", "app_mongo",
+				"app_select", "app_html_dom", "app_events",
+				"app_form","app_user_validation", "app_w3_css",
+				"app_routes","app_colors", "app_all_colors",
+				"app_multi"
+			];
+		});
+
+	</script>
+</body>
+</html>

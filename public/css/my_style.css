@@ -1,0 +1,41 @@
+input.ng-invalid {
+	background-color: yellow;
+}
+
+div {
+	margin-bottom: 10px;
+}
+
+div.in_panel {
+	background-color: lightblue;
+	border-style: solid;
+	width: 50%;
+}
+
+h3 {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-decoration-line: underline;
+	text-decoration-color: darkred;
+}
+
+table, th, td {
+	border: 1px solid grey;
+	border-collapse: collapse;
+	padding: 5px;
+}
+
+span {
+	text-decoration: underline;
+	padding: 10px;
+}
+
+/* This is style for odd numbered rows of the table */
+table tr:nth-child(odd) {
+	background-color: lightgrey;
+}
+
+/* This is style for even numbered rows of the table */
+table tr:nth-child(even) {
+	background-color: white;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>AngularJS Tutorial App - Mongo</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <link href="./css/my_style.css" rel="stylesheet">
+    
+</head>
+
+<body ng-app="myApp">
+
+	<div ng-controller="myCtrl" ng-init="getContacts()">
+		<h3>Example to show <code>$http get</code> request returning data from Mongo DB</h3>
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>E-mail id</th>
+			</tr>
+			<tr ng-repeat="x in contacts">
+				<td>{{x.name}}</td>
+				<td>{{x.email}}</td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- The Controller JavaScript -->
+	<script src="./controllers/my_controller.js"></script>
+	
+</body>
+
+</html>
