@@ -23,3 +23,7 @@ app.get('/contactlist', function(req, res) {
 app.listen(3000);
 
 console.log('Server running on port 3000');
+
+//Adding this comments and another log statement
+//to show changes made in a Git branch
+console.log("Server Ready");
