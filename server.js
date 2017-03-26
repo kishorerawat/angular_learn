@@ -24,6 +24,12 @@ app.listen(3000);
 
 console.log('Server running on port 3000');
 
+<<<<<<< HEAD
 //Adding this comments and another log statement
 //to show changes made in a Git branch
 console.log("Server Ready");
+=======
+
+//added these comments and a log from git branch MyFeature2
+console.log("Changes from MyFeature2")
+>>>>>>> MyFeature2
